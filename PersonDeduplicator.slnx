@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="persondeduplicator.client/persondeduplicator.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="PersonDeduplicator.Server/PersonDeduplicator.Server.csproj" />
+</Solution>
