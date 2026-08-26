@@ -1,10 +1,4 @@
--- Ensure target database exists
-IF DB_ID('LifelongLearning') IS NULL
-BEGIN
-    RAISERROR('Database LifelongLearning not found. Create it or change the database context.',16,1);
-    RETURN;
-END
-USE [LifelongLearning];
+use Phones
 GO
 
 -- Create table if it does not exist
@@ -13,7 +7,7 @@ BEGIN
     CREATE TABLE dbo.People
     (
         ID INT IDENTITY(1,1) PRIMARY KEY,
-        [Name] NVARCHAR(50) NOT NULL,
+        FirstName NVARCHAR(50) NOT NULL,
         LastName NVARCHAR(50) NOT NULL
     );
 END
@@ -58,7 +52,7 @@ BEGIN TRY
         FROM FirstNames f
         CROSS JOIN LastNames l
     )
-    INSERT INTO dbo.People ([Name], LastName)
+    INSERT INTO dbo.People (FirstName, LastName)
     SELECT TOP (300) Name, LastName
     FROM Combos
     ORDER BY NEWID();  -- randomize combinations
