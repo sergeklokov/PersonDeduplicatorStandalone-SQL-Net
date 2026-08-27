@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="free_ai_models.png" />
+  </Folder>
   <Project Path="persondeduplicator.client/persondeduplicator.client.esproj">
     <Build />
     <Deploy />
